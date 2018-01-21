@@ -23,6 +23,13 @@ class JoditWidget extends InputWidget {
 	public $defaultSettings = [];
 
 	/**
+	 * @var string|null Selector pointing to textarea to initialize redactor for.
+	 * Defaults to null meaning that textarea does not exist yet and will be
+	 * rendered by this widget.
+	 */
+	public $selector;
+
+	/**
 	 * @var array {@link https://xdsoft.com/jodit/docs/ redactor options}.
 	 */
 	public $settings = [];
