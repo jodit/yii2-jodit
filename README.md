@@ -1,2 +1,3 @@
-# jodit-yii2
+# yii2-jodit
 Jodit widget for Yii2
+
