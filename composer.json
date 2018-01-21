@@ -21,9 +21,16 @@
             "email": "chupurnov@gmail.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
     "require": {
-        "npm-asset/jodit": "^3.1.0",
-        "yiisoft/yii2": "*",
+        "php": ">=5.4.0",
+        "npm-asset/jodit": "^3.1",
+        "yiisoft/yii2": "~2.0.6",
         "jodit/application": "2.0.*"
     },
     "autoload": {
