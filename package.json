@@ -1,0 +1,21 @@
+{
+  "name": "yii2-jodit",
+  "version": "1.0.5",
+  "description": "Jodit widget for Yii2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "newversion": "npm version patch --no-git-tag-version && npm run github",
+    "github": "git add --all  && git commit -m \"New version %npm_package_version%. Read more http://xdsoft.net/jodit/doc/index.html#%npm_package_version% \" && git tag %npm_package_version% && git push --tags origin HEAD:master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jodit/yii2-jodit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jodit/yii2-jodit/issues"
+  },
+  "homepage": "https://github.com/jodit/yii2-jodit#readme"
+}
