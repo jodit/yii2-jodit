@@ -1,6 +1,6 @@
 {
     "name": "jodit/yii2-jodit",
-    "description": "Awesome WYSIWYG Editor like widget for Yii2",
+    "description": "Jodit - awesome WYSIWYG Editor like widget for Yii2",
     "type": "yii2-extension",
     "keywords": [
         "jodit",
@@ -22,12 +22,13 @@
         }
     ],
     "require": {
+        "npm-asset/jodit": "^3.1.0",
         "yiisoft/yii2": "^2.0",
         "jodit/application": "2.0.*"
     },
     "autoload": {
         "autoload": {
-            "psr-4": { "YiiJodit\\": ["src/"] }
+            "psr-4": { "yii2jodit\\": ["src/"] }
         }
     }
 }
