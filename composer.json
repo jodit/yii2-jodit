@@ -27,8 +27,6 @@
         "jodit/application": "2.0.*"
     },
     "autoload": {
-        "autoload": {
-            "psr-4": { "yii2jodit\\": ["src/"] }
-        }
+        "psr-4": { "yii2jodit\\": ["src/"] }
     }
 }
