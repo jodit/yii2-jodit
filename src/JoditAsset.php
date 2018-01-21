@@ -14,7 +14,7 @@ class JoditAsset extends AssetBundle {
 	 * @var array
 	 */
 	public $js = [
-		'jodi.min.js',
+		'jodit.min.js',
 	];
 	/**
 	 * @var array
