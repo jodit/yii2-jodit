@@ -80,6 +80,6 @@ class JoditWidget extends InputWidget {
 		$selector = Json::encode($this->selector);
 		$settings = !empty($this->settings) ? Json::encode($this->settings) : '';
 
-		$view->registerJs("var editor = new Jodit('$selector', $settings);", $view::POS_READY, self::INLINE_JS_KEY . $this->options['id']);
+		$view->registerJs("var editor = new Jodit($selector, $settings);", $view::POS_READY, self::INLINE_JS_KEY . $this->options['id']);
 	}
 }
