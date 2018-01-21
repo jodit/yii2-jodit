@@ -1,0 +1,33 @@
+{
+    "name": "jodit/yii2-jodit",
+    "description": "Awesome WYSIWYG Editor like widget for Yii2",
+    "type": "yii2-extension",
+    "keywords": [
+        "jodit",
+        "html",
+        "text",
+        "editor",
+        "wysiwyg",
+        "rich",
+        "rich editor",
+        "html editor",
+        "rich text editor",
+        "javascript"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chupurnov Valeriy",
+            "email": "chupurnov@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "^2.0",
+        "jodit/connector": "^2.7.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "jodit\\connector\\": "src/"
+        }
+    }
+}
