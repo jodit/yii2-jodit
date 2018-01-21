@@ -1,5 +1,6 @@
 <?php
-namespace jodit\joditeditor;
+namespace yii2jodit;
+
 use yii\base\Exception;
 use yii\helpers\ArrayHelper;
 use yii\web\AssetBundle;
