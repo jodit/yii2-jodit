@@ -23,7 +23,7 @@
     ],
     "require": {
         "npm-asset/jodit": "^3.1.0",
-        "yiisoft/yii2": "^2.0",
+        "yiisoft/yii2": "*",
         "jodit/application": "2.0.*"
     },
     "autoload": {
