@@ -8,8 +8,6 @@ use yii\widgets\InputWidget;
 
 class JoditWidget extends InputWidget {
 
-	public $csrfCookieParam = '_csrfCookie';
-
 	/**
 	 * @var boolean
 	 */
