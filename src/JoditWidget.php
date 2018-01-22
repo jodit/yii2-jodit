@@ -89,7 +89,7 @@ class JoditWidget extends InputWidget {
 			if (!isset($this->settings['filebrowser'])) {
 				$this->settings['filebrowser'] = [
 					'ajax' => [
-						'url'  => Url::to(['/jodit/connector/upload/'])
+						'url'  => Url::to(['/jodit/connector/uploadfile/'])
 					],
 					'create' => [
 						'url'  => Url::to(['/jodit/connector/foldercreate/'])
