@@ -28,8 +28,8 @@ class ConnectorController extends Controller {
 
 		foreach ($methods as $method) {
 			if (preg_match('#^action([A-Z]+[a-z]+)$#', $method, $match)) {
-				$actions[strtolower($match[1])] = function ($param_arr) use ($method) {
-					call_user_func_array([$this->module->joditApplication, $method], $param_arr);
+				$actions[strtolower($match[1])] = function () use ($method) {
+					call_user_func_array([$this->module->joditApplication, $method]);
 					$this->module->joditApplication->display();
 				};
 			}
