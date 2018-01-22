@@ -6,6 +6,7 @@ use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Json;
+use yii\helpers\Url;
 use yii\widgets\InputWidget;
 
 class JoditWidget extends InputWidget {
@@ -78,6 +79,50 @@ class JoditWidget extends InputWidget {
 		JoditAsset::register($view);
 
 		$selector = Json::encode($this->selector);
+
+		if (\Yii::$app->getModule('jodit')) {
+			if (!isset($this->settings['uploader'])) {
+				$this->settings['uploader'] = [
+					'url'  => Url::to(['/jodit/connector/upload/'])
+				];
+			}
+			if (!isset($this->settings['filebrowser'])) {
+				$this->settings['filebrowser'] = [
+					'ajax' => [
+						'url'  => Url::to(['/jodit/connector/upload/'])
+					],
+					/*'create' => [
+						'url'  => Url::to(['/jodit/connector/foldercreate/'])
+					],
+	                'getLocalFileByUrl' => [
+						'url'  => Url::to(['/jodit/connector/getlocalfilebyurl/'])
+					],
+                    'resize' => [
+						data=> [action: 'imageResize'},
+					],
+                    'crop'=> [
+						data=> [action: 'imageCrop'},
+					],
+                    'move'=> [
+						data=> [action: 'fileMove'},
+					],
+                    'remove'=> [
+						data=> [action: 'fileRemove'},
+					],
+                    'items'=> [
+						data=> [action: 'files'},
+					],
+                    'folder'=> [
+						data=> [action: 'folders'},
+					],
+                    'permissions' => [
+						data=> [action: 'permissions'},
+					],*/
+				];
+			}
+		}
+
+
 		$settings = !empty($this->settings) ? Json::encode($this->settings) : '';
 
 		$view->registerJs("var editor = new Jodit($selector, $settings);", $view::POS_READY, self::INLINE_JS_KEY . $this->options['id']);
