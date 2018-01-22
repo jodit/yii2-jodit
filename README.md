@@ -68,11 +68,12 @@ Once the extension is installed, simply use it in your code by  :
 [All Jodit's options](https://xdsoft.net/jodit/doc/)
 
 or not use ActiveField
-
+```php
 <?= \yii2jodit\JoditWidget::widget([
     'model' => $model,
     'attribute' => 'content'
 ]) ?>
+```
 
 Image uploader
 --------------
