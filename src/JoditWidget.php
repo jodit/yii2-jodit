@@ -80,7 +80,7 @@ class JoditWidget extends InputWidget {
 
 		$selector = Json::encode($this->selector);
 
-		if (\Yii::$app->getModule('jodit')) {
+		if (\Yii::$app->hasModule('jodit')) {
 			if (!isset($this->settings['uploader'])) {
 				$this->settings['uploader'] = [
 					'url'  => Url::to(['/jodit/connector/upload/'])
@@ -91,33 +91,33 @@ class JoditWidget extends InputWidget {
 					'ajax' => [
 						'url'  => Url::to(['/jodit/connector/upload/'])
 					],
-					/*'create' => [
+					'create' => [
 						'url'  => Url::to(['/jodit/connector/foldercreate/'])
 					],
-	                'getLocalFileByUrl' => [
+					'getLocalFileByUrl' => [
 						'url'  => Url::to(['/jodit/connector/getlocalfilebyurl/'])
 					],
-                    'resize' => [
-						data=> [action: 'imageResize'},
+					'resize' => [
+						'url'  => Url::to(['/jodit/connector/imageresize/'])
 					],
-                    'crop'=> [
-						data=> [action: 'imageCrop'},
+					'crop'=> [
+						'url'  => Url::to(['/jodit/connector/imagecrop/'])
 					],
-                    'move'=> [
-						data=> [action: 'fileMove'},
+					'move'=> [
+						'url'  => Url::to(['/jodit/connector/filemove/'])
 					],
-                    'remove'=> [
-						data=> [action: 'fileRemove'},
+					'remove'=> [
+						'url'  => Url::to(['/jodit/connector/fileremove/'])
 					],
-                    'items'=> [
-						data=> [action: 'files'},
+					'items'=> [
+						'url'  => Url::to(['/jodit/connector/files/'])
 					],
-                    'folder'=> [
-						data=> [action: 'folders'},
+					'folder'=> [
+						'url'  => Url::to(['/jodit/connector/folders/'])
 					],
-                    'permissions' => [
-						data=> [action: 'permissions'},
-					],*/
+					'permissions'=> [
+						'url'  => Url::to(['/jodit/connector/permissions/'])
+					],
 				];
 			}
 		}
