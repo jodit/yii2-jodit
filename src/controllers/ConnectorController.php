@@ -31,6 +31,7 @@ class ConnectorController extends Controller {
 			if (preg_match('#^action([A-Z]+[a-z]+)$#', $method, $match)) {
 				$actions[strtolower($match[1])] = [
 					'class' => JoditAction::className(),
+					'modelClass' => JoditAction::className(),
 					'joditApplication' => $this->module->joditApplication,
 					'method' => $method,
 				];

@@ -1,6 +1,8 @@
 <?php
 namespace yii2jodit;
 
+use yii\web\Response;
+
 class JoditModule extends \yii\base\Module {
 	/**
 	 * @var bool
@@ -76,7 +78,7 @@ class JoditModule extends \yii\base\Module {
 	/**
 	 * @var string
 	 */
-	public $baseurl = '@web';
+	public $baseurl = '@web/uploads/';
 
 	/**
 	 * @var string
@@ -112,6 +114,38 @@ class JoditModule extends \yii\base\Module {
 		$this->root = \Yii::getAlias($this->root);
 		$this->baseurl = \Yii::getAlias($this->baseurl);
 
+
+		\Yii::$app->response->formatters[Response::FORMAT_JSON] = [
+			'class' => 'yii\web\JsonResponseFormatter',
+			'prettyPrint' => YII_DEBUG, // use "pretty" output in debug mode,
+			'encodeOptions' => JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
+		];
+
+		\Yii::$app->response->on(Response::EVENT_BEFORE_SEND, function ($event) {
+			$response = $event->sender;
+			if ($response->data !== null) {
+				if (isset($response->data['code']) and $response->data['code']) {
+					$response->data['status'] = $response->data['code'];
+					unset($response->data['code']);
+				}
+
+				if (!isset($response->data['status'])) {
+					$response->data['status'] = 200;
+				}
+
+				$response->data = [
+					'success' => $response->isSuccessful,
+					"time" => date($this->datetimeFormat),
+					'data' => $response->data,
+				];
+
+				if (YII_DEBUG) {
+					$response->data['elapsed_time'] = \Yii::getLogger()->getElapsedTime();
+				}
+
+				$response->statusCode = 200;
+			}
+		});
 
 		$this->joditApplication = new JoditApplication($this);
 		parent::init();
