@@ -1,8 +1,9 @@
 <?php
 namespace yii2jodit\controllers;
 
-use yii\web\Controller;
+use yii\resp\Controller;
 use yii\web\Response;
+use yii2jodit\JoditAction;
 
 class ConnectorController extends Controller {
 	public $enableCsrfValidation = false;
@@ -28,10 +29,11 @@ class ConnectorController extends Controller {
 
 		foreach ($methods as $method) {
 			if (preg_match('#^action([A-Z]+[a-z]+)$#', $method, $match)) {
-				$actions[strtolower($match[1])] = function () use ($method) {
-					call_user_func_array([$this->module->joditApplication, $method]);
-					$this->module->joditApplication->display();
-				};
+				$actions[strtolower($match[1])] = [
+					'class' => JoditAction::className(),
+					'joditApplication' => $this->module->joditApplication,
+					'method' => $method,
+				];
 			}
 		}
 
