@@ -5,7 +5,7 @@ class JoditModule extends \yii\base\Module {
 	/**
 	 * @var bool
 	 */
-	public $debug = true; // must be true
+	public $debug = false;
 
 	/**
 	 * @var \Jodit\Source[]
@@ -109,8 +109,6 @@ class JoditModule extends \yii\base\Module {
 	public $joditApplication;
 
 	public function init() {
-
-
 		$this->root = \Yii::getAlias($this->root);
 		$this->baseurl = \Yii::getAlias($this->baseurl);
 
