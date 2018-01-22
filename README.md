@@ -39,10 +39,15 @@ or if you want to change the upload directory. to path/to/uploadfolder default v
 'modules' => [
 	'jodit' => [
 		'class' => 'yii2jodit\JoditModule',
-		'imageAllowExtensions'=>['jpg','png','gif']
+		'extensions'=>['jpg','png','gif'],
+		'root'=> '@webroot/uploads/',
+		'baseurl'=> '@web/uploads/',
+		'maxFileSize'=> '20mb',
+		'defaultPermission'=> 0775,
 	],
 ],
 ```
+[All connector's options](https://github.com/xdan/jodit-connectors)
 
 > note: You need to create uploads folder and chmod and set security for folder upload reference:[Protect Your Uploads Folder with `.htaccess`](http://tomolivercv.wordpress.com/2011/07/24/protect-your-uploads-folder-with-htaccess/), []How to Setup Secure Media Uploads](http://digwp.com/2012/09/secure-media-uploads/)
 
@@ -60,6 +65,7 @@ Once the extension is installed, simply use it in your code by  :
     ],
 ]);?>
 ```
+[All Jodit's options](https://xdsoft.net/jodit/doc/)
 
 or not use ActiveField
 
@@ -71,21 +77,6 @@ or not use ActiveField
 Image uploader
 --------------
 
-add uploader action to controller:
-
-```php
-public function actions()
-{
-    return [
-        'upload-image' => [
-            'class' => 'yii2jodit\jodit\UploadAction',
-            'folder'=>Yii::getAlias('@webroot/uploads'),
-            'webroot'=>Yii::getAlias('@webroot'),
-        ],
-    ];
-}
-```
-
 editors config:
 
 ```php
@@ -93,12 +84,6 @@ editors config:
     'settings' => [
         'height'=>'250px',
         'enableDragAndDropFileToEditor'=>new \yii\web\JsExpression("true"),
-        'uploader'=>[
-            'url'=>\yii\helpers\Url::to(['upload-image']),
-            'data'=> [
-                '_csrf'=> Yii::$app->request->csrfToken,
-            ],
-        ],
     ],
 ]);?>
 ```
