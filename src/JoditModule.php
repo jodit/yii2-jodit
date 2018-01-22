@@ -76,12 +76,12 @@ class JoditModule extends \yii\base\Module {
 	/**
 	 * @var string
 	 */
-	public $baseurl = '';
+	public $baseurl = '@web';
 
 	/**
 	 * @var string
 	 */
-	public $root = '';
+	public $root = '@webroot/uploads/';
 
 	/**
 	 * @var string[]
@@ -109,6 +109,12 @@ class JoditModule extends \yii\base\Module {
 	public $joditApplication;
 
 	public function init() {
+
+
+		$this->root = \Yii::getAlias($this->root);
+		$this->baseurl = \Yii::getAlias($this->baseurl);
+
+
 		$this->joditApplication = new JoditApplication($this);
 		parent::init();
 	}
