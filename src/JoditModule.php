@@ -8,7 +8,7 @@ class JoditModule extends \yii\base\Module {
 	public $joditApplication;
 
 	public function init() {
-		$this->joditApplication = new JoditApplication((array)$this);
+		$this->joditApplication = new JoditApplication($this->params);
 		parent::init();
 	}
 }

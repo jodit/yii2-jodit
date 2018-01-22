@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6e0864edae2c4cb898c09f19f21f48f8",
+    "content-hash": "44d0dbf8ba4a7d2091b1c4231536de01",
     "packages": [
         {
             "name": "abeautifulsite/simpleimage",
@@ -243,16 +243,16 @@
         },
         {
             "name": "jodit/application",
-            "version": "2.0.10",
+            "version": "2.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xdan/jodit-connector-application.git",
-                "reference": "c8561bec59532141948e98bd2e908cf6a791147a"
+                "reference": "52b3853d500e1cab19fb440d81b3e30fdd9bf22c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xdan/jodit-connector-application/zipball/c8561bec59532141948e98bd2e908cf6a791147a",
-                "reference": "c8561bec59532141948e98bd2e908cf6a791147a",
+                "url": "https://api.github.com/repos/xdan/jodit-connector-application/zipball/52b3853d500e1cab19fb440d81b3e30fdd9bf22c",
+                "reference": "52b3853d500e1cab19fb440d81b3e30fdd9bf22c",
                 "shasum": ""
             },
             "require": {
@@ -281,7 +281,7 @@
                 }
             ],
             "description": "Jodit FileBrowser and Uploader connector",
-            "time": "2018-01-04T01:23:26+00:00"
+            "time": "2018-01-22T11:49:44+00:00"
         },
         {
             "name": "npm-asset/jodit",
