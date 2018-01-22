@@ -1,7 +1,7 @@
 <?php
 namespace yii2jodit\controllers;
 
-use yii\resp\Controller;
+use yii\rest\Controller;
 use yii\web\Response;
 use yii2jodit\JoditAction;
 
