@@ -28,7 +28,7 @@ class ConnectorController extends Controller {
 		$methods =  get_class_methods($this->module->joditApplication);
 
 		foreach ($methods as $method) {
-			if (preg_match('#^action([A-Z]+[a-z]+)$#', $method, $match)) {
+			if (preg_match('#^action([A-Z]+[a-zA-Z]+)$#', $method, $match)) {
 				$actions[strtolower($match[1])] = [
 					'class' => JoditAction::className(),
 					'modelClass' => JoditAction::className(),
