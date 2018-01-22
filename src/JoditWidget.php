@@ -83,7 +83,7 @@ class JoditWidget extends InputWidget {
 		if (\Yii::$app->hasModule('jodit')) {
 			if (!isset($this->settings['uploader'])) {
 				$this->settings['uploader'] = [
-					'url'  => Url::to(['/jodit/connector/upload/'])
+					'url'  => Url::to(['/jodit/connector/uploadfile/'])
 				];
 			}
 			if (!isset($this->settings['filebrowser'])) {
