@@ -9,7 +9,8 @@ class JoditAction  extends Action {
 
 	public function run() {
 	    if (is_callable([$this->joditApplication, $this->method])) {
-		    return call_user_func([$this->joditApplication, $this->method]);
+	    	$result = call_user_func([$this->joditApplication, $this->method]);
+		    return $result ?: [];
 	    }
 
 	    return [];
