@@ -2,6 +2,7 @@
 namespace yii2jodit;
 
 use yii\web\AssetBundle;
+
 /**
  * Jodit Editor asset
  */

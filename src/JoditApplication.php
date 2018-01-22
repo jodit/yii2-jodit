@@ -3,6 +3,6 @@ namespace yii2jodit;
 
 use \Jodit\Application;
 
-class JoditRestApplication extends Application {
+class JoditApplication extends Application {
 	function checkAuthentication() {}
 }

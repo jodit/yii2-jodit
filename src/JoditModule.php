@@ -3,12 +3,12 @@ namespace yii2jodit;
 
 class JoditModule extends \yii\base\Module {
 	/**
-	 * @var
+	 * @var JoditApplication
 	 */
 	public $joditApplication;
 
 	public function init() {
-		$this->joditApplication = new JoditRestApplication((array)$this);
+		$this->joditApplication = new JoditApplication((array)$this);
 		parent::init();
 	}
 }
