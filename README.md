@@ -23,6 +23,28 @@ or add
 
 to the require section of your `composer.json` file.
 
+Configure
+-----
+Add to config file (config/web.php or common\config\main.php)
+
+```php
+'modules' => [
+	'jodit' => 'yii2jodit\JoditModule',
+],
+```
+
+or if you want to change the upload directory. to path/to/uploadfolder default value @webroot/uploads
+
+```php
+'modules' => [
+	'jodit' => [
+		'class' => 'yii2jodit\JoditModule',
+		'imageAllowExtensions'=>['jpg','png','gif']
+	],
+],
+```
+
+> note: You need to create uploads folder and chmod and set security for folder upload reference:[Protect Your Uploads Folder with `.htaccess`](http://tomolivercv.wordpress.com/2011/07/24/protect-your-uploads-folder-with-htaccess/), []How to Setup Secure Media Uploads](http://digwp.com/2012/09/secure-media-uploads/)
 
 Usage
 -----
@@ -30,7 +52,7 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?=$form->field($model, 'content')->widget(\worstinme\jodit\Editor::className(), [
+<?=$form->field($model, 'content')->widget(\yii2jodit\JoditWidget::className(), [
     'settings' => [
         'buttons'=>[
             'bold', 'italic', 'underline', '|', 'ul', 'ol', '|', 'image', '|', 'hr',
@@ -38,6 +60,13 @@ Once the extension is installed, simply use it in your code by  :
     ],
 ]);?>
 ```
+
+or not use ActiveField
+
+<?= \yii2jodit\JoditWidget::widget([
+    'model' => $model,
+    'attribute' => 'content'
+]) ?>
 
 Image uploader
 --------------
@@ -49,7 +78,7 @@ public function actions()
 {
     return [
         'upload-image' => [
-            'class' => 'worstinme\jodit\UploadAction',
+            'class' => 'yii2jodit\jodit\UploadAction',
             'folder'=>Yii::getAlias('@webroot/uploads'),
             'webroot'=>Yii::getAlias('@webroot'),
         ],
@@ -60,7 +89,7 @@ public function actions()
 editors config:
 
 ```php
-<?=$form->field($model, 'content')->widget(\worstinme\jodit\Editor::className(), [
+<?=$form->field($model, 'content')->widget(\yii2jodit\JoditWidget::className(), [
     'settings' => [
         'height'=>'250px',
         'enableDragAndDropFileToEditor'=>new \yii\web\JsExpression("true"),
@@ -73,3 +102,8 @@ editors config:
     ],
 ]);?>
 ```
+
+
+License
+-----
+This package is available under `MIT` License.
