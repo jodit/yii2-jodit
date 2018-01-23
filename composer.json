@@ -37,5 +37,10 @@
     },
     "autoload": {
         "psr-4": { "yii2jodit\\": ["src/"] }
+    },
+    "config": {
+      "fxp-asset": {
+        "enabled": false
+      }
     }
 }
