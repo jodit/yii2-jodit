@@ -15,6 +15,8 @@
         "javascript"
     ],
     "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "authors": [
         {
             "name": "Chupurnov Valeriy",
@@ -22,10 +24,10 @@
         }
     ],
     "repositories": [
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-        }
+      {
+        "type": "composer",
+        "url": "https://asset-packagist.org"
+      }
     ],
     "require-dev": {
         "yiisoft/yii2": "~2.0.6"
@@ -38,9 +40,17 @@
     "autoload": {
         "psr-4": { "yii2jodit\\": ["src/"] }
     },
+    "extra": {
+      "asset-installer-paths": {
+        "npm-asset-library": "vendor/nmp-asset"
+      }
+    },
     "config": {
       "fxp-asset": {
-        "enabled": false
+        "enabled": false,
+        "installer-paths": {
+          "npm-asset-library": "vendor/nmp-asset"
+        }
       }
     }
 }
