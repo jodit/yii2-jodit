@@ -32,8 +32,8 @@
     },
     "require": {
         "php": ">=5.4.0",
-        "npm-asset/jodit": "~3.1.0",
-        "jodit/application": "~2.0.11"
+        "npm-asset/jodit": "^3.1.0",
+        "jodit/application": "^2.0.11"
     },
     "autoload": {
         "psr-4": { "yii2jodit\\": ["src/"] }
