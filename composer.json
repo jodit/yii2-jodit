@@ -29,7 +29,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "npm-asset/jodit": "^3.1",
+        "npm-asset/jodit": "~3.1.0",
         "yiisoft/yii2": "~2.0.6",
         "jodit/application": "~2.0.11"
     },
