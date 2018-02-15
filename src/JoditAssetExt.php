@@ -6,24 +6,21 @@ use yii\web\AssetBundle;
 /**
  * Jodit Editor asset
  */
-class JoditAsset extends AssetBundle {
+class JoditAssetExt extends AssetBundle {
 	/**
 	 * @var string
 	 */
-	public $sourcePath = '@vendor/npm-asset/jodit/build/';
+	public $sourcePath = '@vendor/jodit/yii2-jodit/src/assets';
 	/**
 	 * @var array
 	 */
 	public $js = [
-		'jodit.min.js',
+		'script.js',
 	];
 	/**
 	 * @var array
 	 */
 	public $css = [
-		'jodit.min.css',
-	];
-	public $depends = [
-		'\yii2jodit\JoditAssetExt',
+		'style.css',
 	];
 }

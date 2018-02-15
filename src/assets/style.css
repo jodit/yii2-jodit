@@ -1,0 +1,32 @@
+.jodit-icon-picker {
+    background: no-repeat center center #cccccc52;
+    display: block;
+    border: 1px solid #ddd;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    background-size: 30%;
+    vertical-align: top;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0;
+    text-align: center;
+}
+
+/*.jodit-icon-picker:before {*/
+    /*content: '';*/
+    /*display: inline-block;*/
+/*}*/
+.jodit-icon-picker img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.jodit-icon-picker_wrong  img{
+    display: none;
+}
+.jodit-icon-picker_wrong  {
+    background-image: url(./no-icon.png);
+}

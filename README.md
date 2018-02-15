@@ -90,6 +90,16 @@ editors config:
 ```
 
 
+Icon Picker
+-----------
+```php
+<?=$form->field($model, 'icon')->widget(\yii2jodit\JoditIconPickerWidget::className(), [
+	"path" => 'wp-content/plugins/exchangers-monitor/images/systemlogo'
+]);?>
+```
+
+![Icon Picker](screens/iconpicker.jpg)
+
 License
 -----
 This package is available under `MIT` License.
