@@ -10,7 +10,7 @@ class JoditAsset extends AssetBundle {
 	/**
 	 * @var string
 	 */
-	public $sourcePath = '@vendor/npm-asset/jodit/build/';
+	public $sourcePath = '@vendor/xdan/jodit/build/';
 	/**
 	 * @var array
 	 */
