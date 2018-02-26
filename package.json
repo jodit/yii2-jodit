@@ -1,6 +1,6 @@
 {
   "name": "yii2-jodit",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "Jodit widget for Yii2",
   "main": "index.js",
   "scripts": {
