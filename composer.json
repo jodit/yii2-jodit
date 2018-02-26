@@ -4,6 +4,7 @@
     "type": "yii2-extension",
     "keywords": [
         "jodit",
+        "yii2",
         "html",
         "text",
         "editor",
