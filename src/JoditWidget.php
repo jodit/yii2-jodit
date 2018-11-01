@@ -106,8 +106,11 @@ class JoditWidget extends InputWidget {
 					'move'=> [
 						'url'  => Url::to(['/jodit/connector/filemove/'])
 					],
-					'remove'=> [
+					'fileRemove'=> [
 						'url'  => Url::to(['/jodit/connector/fileremove/'])
+					],
+					'folderRemove'=> [
+						'url'  => Url::to(['/jodit/connector/folderremove/'])
 					],
 					'items'=> [
 						'url'  => Url::to(['/jodit/connector/files/'])
